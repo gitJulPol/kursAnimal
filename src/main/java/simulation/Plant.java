@@ -5,6 +5,7 @@ public class Plant {
     public Plant(Vector2D position) {
         this.position = position;
     }
+    private int x = 4;
 
     public Vector2D getPosition() {
         return position;
