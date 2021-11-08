@@ -16,6 +16,9 @@ public class WorldMap extends AbstractWorldMap {
         for(int i=0; i<ANIMALS_NR; i++){
             animals.add(new Animal(getRandomPosition()));
         }
+        for(int i=0; i<PLANTS_NR; i++){
+            plants.add(new Plant(getRandomPosition()));
+        }
         this.random = new Random();
     }
 
