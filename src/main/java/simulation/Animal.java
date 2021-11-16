@@ -2,21 +2,46 @@ package simulation;
 
 public class Animal {
     private Vector2D position;
+    private int energy;
+    private int age;
 
-    public Animal(Vector2D position) {
+    public Animal(Vector2D position, int energy) {
+
         this.position = position;
+        this.energy = energy;
+        this.age = 1;
     }
 
     public Vector2D getPosition() {
         return position;
     }
 
-    public void move(MapDirection direction, int width, int height) {
-        position = pbc(position.add(direction.getUnitVector()), width, height);
-        System.out.println("Animal moves " + direction + ": new position: " + position);
+    public int getEnergy(){
+        return energy;
     }
 
-    private Vector2D pbc(Vector2D position, int width, int height) {
+    public Animal setEnergy(int newEnergy) {
+        energy = newEnergy;
+        return this;
+    }
+
+    public int getAge() {
+        return age;
+    }
+    public Animal aging(){
+        age ++;
+        return this;
+    }
+
+    public void move(MapDirection direction) {
+        position = pbc(position.add(direction.getUnitVector()));
+        System.out.println("Animal moves " + direction + ": new position: " + position +
+                ": energy level: " + energy + " :age: " + age);
+    }
+
+    private Vector2D pbc(Vector2D position) {
+        int width = Simulation.getWorldMap().getWidth();
+        int height = Simulation.getWorldMap().getHeight();
         if (position.getX() < 0) return position.add(new Vector2D(width, 0));
         if (position.getX() >= width) return position.subtract(new Vector2D(width, 0));
         if (position.getY() < 0) return position.add(new Vector2D(0, height));
