@@ -90,4 +90,8 @@ public class Animal implements Comparable<Animal>{
         return getEnergy() == animal.getEnergy() ? getAnimalID() - animal.getAnimalID() : getEnergy() - animal.getEnergy();
 
     }
+
+    public void moveBasedOnGenome(){
+        move(genome.getRandomMove());
+    }
 }
