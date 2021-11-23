@@ -55,12 +55,9 @@ public class WorldMap extends AbstractWorldMap {
         System.out.println("Today is day number: " + dayNumber);
         animalsPositions.clear();
         animals.forEach(animal -> {
-            animal.move(MapDirection.values()[this.random.nextInt(MapDirection.values().length)]);
+            animal.moveBasedOnGenome();
             placeAnimalOnMap(animal);
         }) ;
-
-
-
     }
 
     private void placeAnimalOnMap(Animal animal){
