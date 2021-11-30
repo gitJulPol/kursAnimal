@@ -36,6 +36,7 @@ public class Animal implements Comparable<Animal>{
         return genome;
     }
 
+
     public int getNumberOfChildren() {
         return numberOfChildren;
     }
@@ -52,7 +53,7 @@ public class Animal implements Comparable<Animal>{
         return energy;
     }
 
-    public int getAnimalID() {
+    public int getAnimalId() {
         return animalID;
     }
 
@@ -87,7 +88,7 @@ public class Animal implements Comparable<Animal>{
     }
 
     public int compareTo(Animal animal){
-        return getEnergy() == animal.getEnergy() ? getAnimalID() - animal.getAnimalID() : getEnergy() - animal.getEnergy();
+        return getEnergy() == animal.getEnergy() ? getAnimalId() - animal.getAnimalId() : getEnergy() - animal.getEnergy();
 
     }
 
