@@ -8,12 +8,19 @@ public class SimulationParams {
 
     static {
         paramsMap = JsonParser.readSimulationParams(CONFIG_PATH);
-
     }
 
-    public static Integer getField(String fieldName){
+    public static Integer getField(String fieldName) {
         return paramsMap.computeIfAbsent(fieldName, k -> {
-            throw new IllegalArgumentException("There is no field" + k);
+            throw new IllegalArgumentException("There is no config field called " + k);
         });
+    }
+
+    public static Map<String, Integer> getParamsMap() {
+        return paramsMap;
+    }
+
+    public static void setField(String fieldName, int value){
+        paramsMap.put(fieldName, value);
     }
 }

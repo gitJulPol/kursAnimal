@@ -1,6 +1,6 @@
 package simulation;
 
-abstract class AbstractWorldMap implements IWorldMap {
+public abstract class AbstractWorldMap implements IWorldMap {
     protected int width;
     protected int height;
 
