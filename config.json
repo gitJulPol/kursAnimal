@@ -2,7 +2,7 @@
   "width": 30,
   "height": 20,
   "noOfAnimals": 108,
-  "noOfPlats": 500,
+  "noOfPlants": 500,
   "animalEnergy": 50,
   "plantEnergy": 10,
   "speed": 5
